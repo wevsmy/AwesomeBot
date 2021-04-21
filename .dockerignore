@@ -1,0 +1,27 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+.git
+.gitignore
+data
+log
+__pycache__/
+.vscode/
+scripts/
+tests/
+venv/
+.env
+.env.dev
+tmp/
+volumes/
+.docker/
+build.sh
+devstart.sh
+docker-compose.yml
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen

@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "awesomebot"
+version = "0.1.0"
+description = "Awesome Bot for QQ"
+authors = ["wevsmy <wevsmy@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+nonebot2 = "^2.0.0a13.post1"
+nonebot-adapter-cqhttp = "^2.0.0a12"
+nonebot-plugin-apscheduler = "^0.1.2"
+psutil = "^5.7.2"
+httpx = "^0.17.0"
+selenium = "^3.141.0"
+
+[tool.poetry.dev-dependencies]
+nonebot-plugin-test = "^0.2.0"
+nb-cli = {version = "^0.4.0", extras = ["deploy"]}
+autopep8 = "^1.5.6"
+
+[nonebot.plugins]
+plugins = ["nonebot_plugin_apscheduler","nonebot_plugin_test"]
+plugin_dirs = ["src/plugins"]
+
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+default = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
