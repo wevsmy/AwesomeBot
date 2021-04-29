@@ -81,9 +81,14 @@ class Webdriver(object):
         self.driver.execute_script('window.localStorage.clear();')
         self.driver.delete_all_cookies()
         time.sleep(1)
-        wrap_elements: WebElement = self.driver.find_element_by_xpath(
-            '/html/body/div[2]/div/div/i')
-        text: str = wrap_elements.get_attribute("innerHTML")
+        text: str = ''
+        try:
+            wrap_elements: WebElement = self.driver.find_element_by_xpath(
+                '/html/body/div[2]/div/div/i')
+            text: str = wrap_elements.get_attribute("innerHTML")
+        except Exception as e:
+            print('err:', e)
+
         print('text', text)
         if text == NEW_STR:
             self.driver.quit()
